@@ -1,7 +1,15 @@
 import "@mantine/core/styles.css";
 import React from "react";
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import {
+  MantineProvider,
+  ColorSchemeScript,
+  Container,
+  Center,
+  Stack,
+  Title,
+} from "@mantine/core";
 import { theme } from "../theme";
+import Header from "./Header";
 
 export const metadata = {
   title: "Mantine Next.js template",
@@ -20,7 +28,15 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider defaultColorScheme="light" theme={theme}>
+          <Container>
+            <Stack gap={'xl'}>
+            <Header />
+            <Title order={5}>mocking api call with 2s loading to see streaming concept</Title>
+            {children}
+            </Stack>
+          </Container>
+        </MantineProvider>
       </body>
     </html>
   );
