@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: any }) {
           <Container>
             <Stack gap={'xl'}>
             <Header />
-            <Title order={5}>mocking api call with 2s loading to see streaming concept</Title>
+            <Title order={5}>Simulating an API call with a 2-second delay to demonstrate the streaming concept.</Title>
             {children}
             </Stack>
           </Container>
