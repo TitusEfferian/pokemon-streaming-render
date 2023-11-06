@@ -6,11 +6,15 @@ const getPokemonDetailData = async (pokemonId: number) => {
     cache: "no-store",
   });
 
-  return res.json();
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(res.json());
+    }, 2000);
+  })
 };
 
 export default async function InitialPokemon({ id }: { id: number }) {
-  const data = await getPokemonDetailData(id);
+  const data = await getPokemonDetailData(id) as { name: string; sprites: { front_default: string } }
   return (
     <Card key={data.name} shadow="md" withBorder>
       <Stack justify="center" align="center">

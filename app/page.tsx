@@ -18,21 +18,17 @@ export default async function HomePage() {
        */}
       {/* @ts-expect-error Async Server Component */}
       <InitialPokemon id={1} />
-      {/**
-       * streaming section using manual suspense
-       */}
-      <Suspense fallback={<PokemonStreamLoader />}>
-        {/* @ts-expect-error Async Server Component */}
-        <PokemonStream id={20} />
-        {/* @ts-expect-error Async Server Component */}
-        <PokemonStream id={40} />
-        {/* @ts-expect-error Async Server Component */}
-        <PokemonStream id={60} />
-        {/* @ts-expect-error Async Server Component */}
-        <PokemonStream id={80} />
-        {/* @ts-expect-error Async Server Component */}
-        <PokemonStream id={100} />
-      </Suspense>
+      {/* @ts-expect-error Async Server Component */}
+      <InitialPokemon id={10} />
+      {/* @ts-expect-error Async Server Component */}
+      <InitialPokemon id={20} />
+      {/* @ts-expect-error Async Server Component */}
+      <InitialPokemon id={30} />
+      {/* @ts-expect-error Async Server Component */}
+      <InitialPokemon id={40} />
+      {/* @ts-expect-error Async Server Component */}
+      <InitialPokemon id={50} />
+
     </SimpleGrid>
   );
 }
